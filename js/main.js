@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalPriceElement = document.getElementById("total-price");
   const cartItemTemplate = document.getElementById("cart-item-template");
 
+
+  //update the price
   function updateTotalPrice() {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     const total = cartItems.reduce(
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     totalPriceElement.textContent = `الإجمالي: $${total.toFixed(2)}`;
   }
 
+  // show cart
   function renderCartItems() {
     cartItemsContainer.innerHTML = "";
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -68,6 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
   renderCartItems();
 });
 
+
+
+
+
 // loading
 setTimeout(() => {
   const loadingSlide = document.querySelector('.loading_slide');
@@ -93,3 +100,7 @@ window.onload = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+
+// 
+/** */
